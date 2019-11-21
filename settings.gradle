@@ -1,0 +1,3 @@
+rootProject.name = 'selenium-first-test'
+include 'java-example'
+
