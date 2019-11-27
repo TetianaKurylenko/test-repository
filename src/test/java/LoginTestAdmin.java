@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -18,11 +19,16 @@ public class LoginTestAdmin {
     @Before
     public void start() {
         WebDriver chromeDriver = new ChromeDriver();
-        WebDriver firefoxDriver = new FirefoxDriver();
+
+        FirefoxOptions options = new FirefoxOptions();
+        options.setBinary("/Applications/Firefox Nightly.app/Contents/MacOS/firefox-bin");
+        WebDriver firefoxDriver = new FirefoxDriver(options);
+
         WebDriver safariDriver = new SafariDriver();
 
-        driversArray = new WebDriver[] {chromeDriver, firefoxDriver, safariDriver};
+        driversArray = new WebDriver[]{chromeDriver, firefoxDriver, safariDriver};
     }
+
 
     @After
     public void stop() {
