@@ -29,10 +29,10 @@ public class ProductTest {
     }
 
     @Test
-    public void loginTest() {
-        driver.get("http://192.168.64.2/litecart/");
+    public void productsTest() {
+        driver.get("http://192.168.64.2/litecart-1-3-7/");
 
-        List<WebElement> elements = driver.findElements(By.cssSelector("[class=product-column]"));
+        List<WebElement> elements = driver.findElements(By.cssSelector("[class=product]"));
 
         System.out.println(String.format("Elements count = %s", elements.size()));
 
@@ -45,7 +45,6 @@ public class ProductTest {
 
             if  ( stickers.size() != 1 ) {
                throw new NoSuchElementException("");
-
             }
         }
     }
